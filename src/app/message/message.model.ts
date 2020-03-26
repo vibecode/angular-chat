@@ -1,6 +1,6 @@
 import { User } from '../user/user.model'
 import { Thread } from '../thread/thread.model'
-import { uuid } from 'uuid'
+import { v4 } from 'uuid'
 
 export class Message {
   id: string
@@ -11,7 +11,7 @@ export class Message {
   thread: Thread
 
   constructor(obj?: any) {
-    this.id = obj && obj.id  || uuid();
+    this.id = obj && obj.id  || v4();
     this.isRead  = obj && obj.isRead  || false;
      this.sentAt = obj && obj.sentAt  || new Date(); 
      this.author =  obj && obj.author || null;

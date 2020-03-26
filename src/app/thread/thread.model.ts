@@ -1,4 +1,4 @@
-import { uuid } from 'uuid'
+import { v4 } from 'uuid'
 
 import { Message } from '../message/message.model'
 
@@ -9,7 +9,7 @@ export class Thread {
   avatarSrc: string
 
   constructor(id?: string, name?: string, avatarSrc?: string) {
-    this.id = id || uuid()
+    this.id = id || v4()
     this.name = name
     this.avatarSrc = avatarSrc
   }
